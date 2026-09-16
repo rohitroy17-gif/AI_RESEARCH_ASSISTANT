@@ -6,6 +6,13 @@ The system uses multiple specialized AI agents to search the web, scrape relevan
 
 Instead of relying on a single LLM call, ResearchMind uses a **multi-step research pipeline** where each component has a specific responsibility.
 
+## 🚀 Live Demo
+
+Add your Streamlit deployment link here:
+
+https://airesearchassistant-jbzzappzukhajmdytgg7hry.streamlit.app/
+
+
 ## 🚀 Features
 
 - 🔎 Web research using Tavily

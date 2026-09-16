@@ -1,5 +1,4 @@
-import os
-import streamlit as st
+
 
 from langchain.agents import create_agent
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -10,16 +9,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
 
-if not api_key:
-    st.error("GEMINI_API_KEY is not configured.")
-    st.stop()
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-3.6-flash",
     temperature=0,
-    google_api_key=api_key
 )
 
 def build_search_agent():

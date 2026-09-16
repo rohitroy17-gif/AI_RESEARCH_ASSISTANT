@@ -1,3 +1,6 @@
+import os
+import streamlit as st
+
 from langchain.agents import create_agent
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
@@ -6,9 +9,15 @@ from tools import web_search, scrape_url
 from dotenv import load_dotenv
 load_dotenv()
 
+api_key = st.secrets.get(
+    "GEMINI_API_KEY",
+    os.getenv("GEMINI_API_KEY")
+)
+
 llm = ChatGoogleGenerativeAI(
     model="gemini-3.6-flash",
-    temperature=0
+    temperature=0,
+    google_api_key=api_key
 )
 
 def build_search_agent():
